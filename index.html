@@ -1,54 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="css/main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto ONG - Página Inicial</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <header>
-        <img src="img/logo.png" alt="Logotipo do Projeto ONG com duas mãos entrelaçadas segurando um broto de planta" width="180" height="60">
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos Sociais</a></li>
-                <li><a href="cadastro.html">Seja Voluntário</a></li>
-            </ul>
-        </nav>
+    <!-- Cabeçalho com Flexbox -->
+    <header style="background-color: var(--cor-superficie); border-bottom: 1px solid var(--cor-borda);">
+        <div class="container header-conteudo">
+            <img src="img/logo.png" alt="Logotipo do Projeto ONG com duas mãos entrelaçadas segurando um broto de planta" width="180" height="60">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" style="color: var(--cor-primaria); font-weight: bold; text-decoration: none;">Início</a></li>
+                    <li><a href="projetos.html" style="color: var(--cor-texto-principal); text-decoration: none;">Projetos Sociais</a></li>
+                    <li><a href="cadastro.html" style="color: var(--cor-destaque); font-weight: bold; text-decoration: none;">Seja Voluntário</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h1>Projeto ONG - Transformando Vidas</h1>
+    <!-- Conteúdo Principal -->
+    <main class="container" style="padding-top: var(--espaco-lg); padding-bottom: var(--espaco-lg);">
+        
+        <h1 style="font-size: var(--tamanho-h1); color: var(--cor-primaria); margin-bottom: var(--espaco-md);">
+            Projeto ONG - Transformando Vidas
+        </h1>
 
-        <section id="apresentacao">
-            <h2>Quem Somos</h2>
-            <p>O Projeto ONG é uma organização sem fins lucrativos dedicada a promover a inclusão social, a educação e a garantia de direitos para famílias em situação de vulnerabilidade.</p>
+        <!-- Secção Quem Somos (Layout Grid 12 colunas) -->
+        <section id="apresentacao" class="grid-12" style="margin-bottom: var(--espaco-xl); align-items: center;">
+            <div class="col-12 col-lg-6">
+                <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-sm);">
+                    Quem Somos
+                </h2>
+                <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario);">
+                    O Projeto ONG é uma organização sem fins lucrativos dedicada a promover a inclusão social, a educação e a garantia de direitos para famílias em situação de vulnerabilidade.
+                </p>
+            </div>
             
-            <figure>
-                <img src="img/voluntarios-acao.jpg" alt="Grupo de voluntários sorridentes do Projeto ONG distribuindo cestas de alimentos e materiais escolares em uma comunidade local">
-                <figcaption>Voluntários do Projeto ONG durante a ação social de entrega de suprimentos.</figcaption>
-            </figure>
+            <div class="col-12 col-lg-6">
+                <figure class="card-ong">
+                    <img src="img/voluntarios-acao.jpg" alt="Grupo de voluntários sorridentes do Projeto ONG distribuindo cestas de alimentos e materiais escolares em uma comunidade local" style="border-radius: var(--raio-borda);">
+                    <figcaption style="font-size: var(--tamanho-sm); color: var(--cor-texto-secundario); margin-top: var(--espaco-xs);">
+                        Voluntários do Projeto ONG durante a ação social de entrega de suprimentos.
+                    </figcaption>
+                </figure>
+            </div>
         </section>
 
-        <section id="missao-visao-valores">
-            <h2>Nossa Atuação</h2>
-            <article>
-                <h3>Missão</h3>
-                <p>Oferecer suporte educacional, social e alimentar para pessoas em situação de vulnerabilidade econômica e social.</p>
-            </article>
+        <!-- Secção Nossa Atuação (Grid 12 colunas dividida em 2 blocos) -->
+        <section id="missao-visao-valores" style="margin-bottom: var(--espaco-xl);">
+            <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-md);">
+                Nossa Atuação
+            </h2>
+            <div class="grid-12">
+                <article class="col-12 col-md-6 card-ong">
+                    <h3 style="font-size: var(--tamanho-h3); color: var(--cor-primaria); margin-bottom: var(--espaco-xs);">Missão</h3>
+                    <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario);">
+                        Oferecer suporte educacional, social e alimentar para pessoas em situação de vulnerabilidade econômica e social.
+                    </p>
+                </article>
 
-            <article>
-                <h3>Visão</h3>
-                <p>Ser referência nacional no desenvolvimento comunitário participativo e na transformação de realidades sociais.</p>
-            </article>
+                <article class="col-12 col-md-6 card-ong">
+                    <h3 style="font-size: var(--tamanho-h3); color: var(--cor-secundaria); margin-bottom: var(--espaco-xs);">Visão</h3>
+                    <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario);">
+                        Ser referência nacional no desenvolvimento comunitário participativo e na transformação de realidades sociais.
+                    </p>
+                </article>
+            </div>
         </section>
 
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <p>Fale conosco para tirar dúvidas, propor parcerias ou agendar uma visita institucional:</p>
-            <ul>
+        <!-- Secção Contato -->
+        <section id="contato" class="card-ong">
+            <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-sm);">
+                Entre em Contato
+            </h2>
+            <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario); margin-bottom: var(--espaco-sm);">
+                Fale conosco para tirar dúvidas, propor parcerias ou agendar uma visita institucional:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--espaco-xs);">
                 <li><strong>Endereço:</strong> Rua da Solidariedade, 123 - Centro, São Paulo - SP</li>
                 <li><strong>Telefone:</strong> (11) 98765-4321</li>
                 <li><strong>E-mail:</strong> contato@projetoong.org.br</li>
@@ -57,8 +89,11 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Projeto ONG. Todos os direitos reservados.</p>
+    <!-- Rodapé com Flexbox -->
+    <footer style="background-color: var(--cor-texto-principal); color: var(--cor-superficie); margin-top: var(--espaco-xl);">
+        <div class="container footer-conteudo">
+            <p>&copy; 2026 Projeto ONG. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>
