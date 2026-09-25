@@ -87,3 +87,34 @@ img {
     .col-lg-6 { grid-column: span 6; }
     .col-lg-4 { grid-column: span 4; }
 }
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (BREAKPOINTS)
+   ========================================================================== */
+
+/* Padrão para celulares: 1 coluna ocupando a tela toda */
+
+@media (min-width: 481px) {
+    /* Telas um pouco maiores: dá pra colocar 2 itens por linha */
+    .col-sm-6 { grid-column: span 6; }
+}
+
+@media (min-width: 768px) {
+    /* Tablets: divide a tela em 2 ou 3 colunas */
+    .col-md-6 { grid-column: span 6; }
+    .col-md-4 { grid-column: span 4; }
+}
+
+@media (min-width: 1024px) {
+    /* Desktops e notebooks: estrutura principal (ex: conteúdo em 8 + lateral em 4) */
+    .col-lg-8 { grid-column: span 8; }
+    .col-lg-6 { grid-column: span 6; }
+    .col-lg-4 { grid-column: span 4; }
+}
+
+@media (min-width: 1280px) {
+    /* Monitores grandes: segura a largura máxima pra não esticar demais */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
