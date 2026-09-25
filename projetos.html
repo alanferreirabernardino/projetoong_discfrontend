@@ -4,79 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto ONG - Projetos Sociais</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Estilização da Tabela de Prestação de Contas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--espaco-sm);
+            background-color: var(--cor-superficie);
+            border-radius: var(--raio-borda);
+            overflow: hidden;
+            box-shadow: var(--sombra-card);
+        }
+        th, td {
+            padding: var(--espaco-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+        th {
+            background-color: var(--cor-primaria);
+            color: #ffffff;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: var(--cor-fundo);
+        }
+        .btn-link {
+            display: inline-block;
+            background-color: var(--cor-destaque);
+            color: #ffffff !important;
+            padding: var(--espaco-sm) var(--espaco-md);
+            border-radius: var(--raio-borda);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: var(--espaco-xs);
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <img src="img/logo.png" alt="Logotipo do Projeto ONG com duas mãos entrelaçadas segurando um broto de planta" width="180" height="60">
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos Sociais</a></li>
-                <li><a href="cadastro.html">Seja Voluntário</a></li>
-            </ul>
-        </nav>
+    <!-- Cabeçalho com Flexbox -->
+    <header style="background-color: var(--cor-superficie); border-bottom: 1px solid var(--cor-borda);">
+        <div class="container header-conteudo">
+            <img src="img/logo.png" alt="Logotipo do Projeto ONG com duas mãos entrelaçadas segurando um broto de planta" width="180" height="60">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" style="color: var(--cor-texto-principal); text-decoration: none;">Início</a></li>
+                    <li><a href="projetos.html" style="color: var(--cor-primaria); font-weight: bold; text-decoration: none;">Projetos Sociais</a></li>
+                    <li><a href="cadastro.html" style="color: var(--cor-destaque); font-weight: bold; text-decoration: none;">Seja Voluntário</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h1>Projetos Sociais e Formas de Engajamento</h1>
+    <!-- Conteúdo Principal -->
+    <main class="container" style="padding-top: var(--espaco-lg); padding-bottom: var(--espaco-lg);">
+        
+        <h1 style="font-size: var(--tamanho-h1); color: var(--cor-primaria); margin-bottom: var(--espaco-md);">
+            Projetos Sociais e Formas de Engajamento
+        </h1>
 
-        <section id="projetos-andamento">
-            <h2>Iniciativas em Andamento</h2>
+        <!-- Iniciativas em Andamento (Grid 12 colunas) -->
+        <section id="projetos-andamento" style="margin-bottom: var(--espaco-xl);">
+            <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-md);">
+                Iniciativas em Andamento
+            </h2>
             
-            <article>
-                <h3>Projeto Educação para o Futuro</h3>
-                <p>Oferecemos aulas de reforço escolar, informática básica e oficinas culturais para crianças e adolescentes no contraturno escolar.</p>
-                <figure>
-                    <img src="img/projeto-educacao.jpg" alt="Crianças em uma sala de aula participando de uma oficina de informática do Projeto ONG">
-                    <figcaption>Alunos atendidos pelas oficinas de inclusão digital.</figcaption>
-                </figure>
-                <ul>
-                    <li><strong>Atendidos:</strong> 150 crianças por mês</li>
-                    <li><strong>Meta:</strong> Expandir o laboratório de computadores</li>
-                </ul>
-            </article>
+            <div class="grid-12">
+                <!-- Projeto 1 -->
+                <article class="col-12 col-md-6 card-ong">
+                    <div>
+                        <h3 style="font-size: var(--tamanho-h3); color: var(--cor-primaria); margin-bottom: var(--espaco-xs);">
+                            Projeto Educação para o Futuro
+                        </h3>
+                        <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario); margin-bottom: var(--espaco-sm);">
+                            Oferecemos aulas de reforço escolar, informática básica e oficinas culturais para crianças e adolescentes no contraturno escolar.
+                        </p>
+                        <figure style="margin-bottom: var(--espaco-sm);">
+                            <img src="img/projeto-educacao.jpg" alt="Crianças em uma sala de aula participando de uma oficina de informática do Projeto ONG" style="border-radius: var(--raio-borda);">
+                            <figcaption style="font-size: var(--tamanho-sm); color: var(--cor-texto-secundario); margin-top: var(--espaco-xs);">
+                                Alunos atendidos pelas oficinas de inclusão digital.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--espaco-xs); font-size: var(--tamanho-sm);">
+                        <li><strong>Atendidos:</strong> 150 crianças por mês</li>
+                        <li><strong>Meta:</strong> Expandir o laboratório de computadores</li>
+                    </ul>
+                </article>
 
-            <article>
-                <h3>Projeto Mesa Solidária</h3>
-                <p>Arrecadação e distribuição de cestas básicas e refeições prontas para famílias em situação de extrema vulnerabilidade social.</p>
-                <figure>
-                    <img src="img/projeto-alimentacao.jpg" alt="Voluntários organizando cestas básicas no galpão do Projeto ONG">
-                    <figcaption>Triagem e montagem das cestas para distribuição comunitária.</figcaption>
-                </figure>
-                <ul>
-                    <li><strong>Atendidos:</strong> 300 famílias beneficiadas</li>
-                    <li><strong>Meta:</strong> Alcançar 500 famílias no próximo trimestre</li>
-                </ul>
-            </article>
+                <!-- Projeto 2 -->
+                <article class="col-12 col-md-6 card-ong">
+                    <div>
+                        <h3 style="font-size: var(--tamanho-h3); color: var(--cor-secundaria); margin-bottom: var(--espaco-xs);">
+                            Projeto Mesa Solidária
+                        </h3>
+                        <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario); margin-bottom: var(--espaco-sm);">
+                            Arrecadação e distribuição de cestas básicas e refeições prontas para famílias em situação de extrema vulnerabilidade social.
+                        </p>
+                        <figure style="margin-bottom: var(--espaco-sm);">
+                            <img src="img/projeto-alimentacao.jpg" alt="Voluntários organizando cestas básicas no galpão do Projeto ONG" style="border-radius: var(--raio-borda);">
+                            <figcaption style="font-size: var(--tamanho-sm); color: var(--cor-texto-secundario); margin-top: var(--espaco-xs);">
+                                Triagem e montagem das cestas para distribuição comunitária.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--espaco-xs); font-size: var(--tamanho-sm);">
+                        <li><strong>Atendidos:</strong> 300 famílias beneficiadas</li>
+                        <li><strong>Meta:</strong> Alcançar 500 famílias no próximo trimestre</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
-        <section id="voluntariado">
-            <h2>Trabalho Voluntário</h2>
-            <p>Sua dedicação e talento podem transformar vidas. Oferecemos oportunidades presenciais e remotas em diversas áreas de atuação.</p>
+        <!-- Trabalho Voluntário -->
+        <section id="voluntariado" class="card-ong" style="margin-bottom: var(--espaco-xl);">
+            <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-xs);">
+                Trabalho Voluntário
+            </h2>
+            <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario); margin-bottom: var(--espaco-sm);">
+                Sua dedicação e talento podem transformar vidas. Oferecemos oportunidades presenciais e remotas em diversas áreas de atuação.
+            </p>
             
-            <h3>Áreas de Atuação</h3>
-            <ul>
+            <h3 style="font-size: var(--tamanho-h3); color: var(--cor-primaria); margin-bottom: var(--espaco-xs);">
+                Áreas de Atuação
+            </h3>
+            <ul style="margin-left: var(--espaco-md); margin-bottom: var(--espaco-sm); color: var(--cor-texto-secundario);">
                 <li>Apoio pedagógico e reforço escolar</li>
                 <li>Organização e logística de doações</li>
                 <li>Comunicação, redes sociais e design</li>
             </ul>
 
-            <p><a href="cadastro.html">Clique aqui para se cadastrar como voluntário</a></p>
+            <div>
+                <a href="cadastro.html" class="btn-link">Clique aqui para se cadastrar como voluntário</a>
+            </div>
         </section>
 
-        <section id="doacoes">
-            <h2>Como Fazer uma Doação</h2>
-            <p>Sua contribuição financeira garante a continuidade de nossas atividades essenciais.</p>
+        <!-- Como Fazer uma Doação -->
+        <section id="doacoes" class="card-ong">
+            <h2 style="font-size: var(--tamanho-h2); color: var(--cor-texto-principal); margin-bottom: var(--espaco-xs);">
+                Como Fazer uma Doação
+            </h2>
+            <p style="font-size: var(--tamanho-corpo); color: var(--cor-texto-secundario); margin-bottom: var(--espaco-sm);">
+                Sua contribuição financeira garante a continuidade de nossas atividades essenciais.
+            </p>
 
-            <h3>Modalidades de Contribuição</h3>
-            <ul>
+            <h3 style="font-size: var(--tamanho-h3); color: var(--cor-primaria); margin-bottom: var(--espaco-xs);">
+                Modalidades de Contribuição
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--espaco-xs); margin-bottom: var(--espaco-md);">
                 <li><strong>Chave PIX (CNPJ):</strong> 00.123.456/0001-89</li>
                 <li><strong>Transferência Bancária:</strong> Banco Social (001) | Agência: 1234 | Conta: 56789-0</li>
                 <li><strong>Doação Recorrente:</strong> Apadrinhe um projeto com contribuições mensais.</li>
             </ul>
 
-            <h3>Prestação de Contas e Destinação dos Recursos</h3>
+            <h3 style="font-size: var(--tamanho-h3); color: var(--cor-texto-principal); margin-bottom: var(--espaco-xs);">
+                Prestação de Contas e Destinação dos Recursos
+            </h3>
             <table>
                 <thead>
                     <tr>
@@ -103,8 +187,11 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Projeto ONG. Todos os direitos reservados.</p>
+    <!-- Rodapé com Flexbox -->
+    <footer style="background-color: var(--cor-texto-principal); color: var(--cor-superficie); margin-top: var(--espaco-xl);">
+        <div class="container footer-conteudo">
+            <p>&copy; 2026 Projeto ONG. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>
