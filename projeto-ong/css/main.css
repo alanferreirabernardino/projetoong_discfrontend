@@ -1,0 +1,89 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM - VARIÁVEIS GLOBAIS
+   ========================================================================== */
+:root {
+    /* Cores Institucionais e Ação */
+    --cor-primaria: #1b5e20;          /* Verde Escuro (Ação principal, cabeçalho) */
+    --cor-primaria-hover: #2e7d32;    /* Verde Médio (Hover em botões primários) */
+    --cor-secundaria: #0277bd;        /* Azul Confiança (Links, tags) */
+    --cor-destaque: #e65100;          /* Laranja Engajamento (Botões de doação) */
+    
+    /* Cores Neutras e de Superfície */
+    --cor-fundo: #f8f9fa;             /* Cinza Ultra Claro (Fundo global) */
+    --cor-superficie: #ffffff;        /* Branco Puro (Cards e modais) */
+    --cor-texto-principal: #212121;  /* Preto Suave (Texto e títulos - alto contraste) */
+    --cor-texto-secundario: #546e7a; /* Cinza Fechado (Legendas e textos auxiliares) */
+    --cor-borda: #d1d5db;             /* Cinza Claro (Divisores e bordas) */
+
+    /* Escala Tipográfica (5 Patamares) */
+    --fonte-principal: 'Inter', system-ui, -apple-system, sans-serif;
+    --tamanho-h1: 2.25rem;            /* 36px */
+    --tamanho-h2: 1.75rem;            /* 28px */
+    --tamanho-h3: 1.25rem;            /* 20px */
+    --tamanho-corpo: 1rem;            /* 16px */
+    --tamanho-sm: 0.875rem;           /* 14px */
+
+    /* Espaçamentos Modulares (Escala Base 8px) */
+    --espaco-xs: 0.5rem;              /* 8px */
+    --espaco-sm: 1rem;                /* 16px */
+    --espaco-md: 1.5rem;              /* 24px */
+    --espaco-lg: 2.5rem;              /* 40px */
+    --espaco-xl: 4rem;                /* 64px */
+
+    /* Bordas e Sombras */
+    --raio-borda: 8px;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   2. RESET E REGRAS GLOBAIS
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   3. ESTRUTURA MACRO (GRID DE 12 COLUNAS)
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espaco-sm);
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espaco-md);
+}
+
+/* Colunas Base (Mobile-first) */
+.col-12 { grid-column: span 12; }
+
+/* Breakpoints para Tablet e Desktop */
+@media (min-width: 768px) {
+    .col-md-6 { grid-column: span 6; }
+    .col-md-4 { grid-column: span 4; }
+}
+
+@media (min-width: 1024px) {
+    .col-lg-8 { grid-column: span 8; }
+    .col-lg-6 { grid-column: span 6; }
+    .col-lg-4 { grid-column: span 4; }
+}
