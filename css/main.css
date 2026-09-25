@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. DESIGN SYSTEM - VARIÁVEIS GLOBAIS
+   DESIGN SYSTEM - VARIÁVEIS GLOBAIS
    ========================================================================== */
 :root {
     /* Cores Institucionais e Ação */
@@ -36,7 +36,7 @@
 }
 
 /* ==========================================================================
-   2. RESET E REGRAS GLOBAIS
+   RESET E REGRAS GLOBAIS
    ========================================================================== */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -58,7 +58,7 @@ img {
 }
 
 /* ==========================================================================
-   3. ESTRUTURA MACRO (GRID DE 12 COLUNAS)
+   ESTRUTURA MACRO (GRID DE 12 COLUNAS)
    ========================================================================== */
 .container {
     width: 100%;
@@ -87,34 +87,54 @@ img {
     .col-lg-6 { grid-column: span 6; }
     .col-lg-4 { grid-column: span 4; }
 }
+
+
 /* ==========================================================================
-   4. LAYOUT RESPONSIVO (BREAKPOINTS)
+   COMPONENTES E ALINHAMENTOS COM FLEXBOX
    ========================================================================== */
 
-/* Padrão para celulares: 1 coluna ocupando a tela toda */
-
-@media (min-width: 481px) {
-    /* Telas um pouco maiores: dá pra colocar 2 itens por linha */
-    .col-sm-6 { grid-column: span 6; }
+/* Cabeçalho Principal */
+.header-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espaco-sm) 0;
 }
 
-@media (min-width: 768px) {
-    /* Tablets: divide a tela em 2 ou 3 colunas */
-    .col-md-6 { grid-column: span 6; }
-    .col-md-4 { grid-column: span 4; }
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+    gap: var(--espaco-sm);
+    align-items: center;
+    list-style: none;
 }
 
-@media (min-width: 1024px) {
-    /* Desktops e notebooks: estrutura principal (ex: conteúdo em 8 + lateral em 4) */
-    .col-lg-8 { grid-column: span 8; }
-    .col-lg-6 { grid-column: span 6; }
-    .col-lg-4 { grid-column: span 4; }
+/* Cartão de Projeto */
+.card-ong {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--cor-superficie);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    padding: var(--espaco-md);
+    height: 100%;
 }
 
-@media (min-width: 1280px) {
-    /* Monitores grandes: segura a largura máxima pra não esticar demais */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+/* Grupo de Formulário */
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-xs);
+    margin-bottom: var(--espaco-sm);
+}
+
+/* Rodapé Institucional */
+.footer-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espaco-md);
+    padding: var(--espaco-md) 0;
 }
